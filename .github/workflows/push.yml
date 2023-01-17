@@ -1,0 +1,21 @@
+name: Deploy de la pagina 🐊
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  deploy-page:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: releases/v4
+        folder: .
+
+
+
